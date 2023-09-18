@@ -13,7 +13,7 @@ public interface BaseServices<T, ID> {
 
     Optional<T> findById(ID id);
 
-    void save(T t);
+    void insert(T t);
 
     void update(T t);
 

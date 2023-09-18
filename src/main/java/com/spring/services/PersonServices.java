@@ -33,7 +33,7 @@ public class PersonServices implements BaseServices<Person, Long> {
     }
 
     @Override
-    public void save(Person person) {
+    public void insert(Person person) {
         personRepository.save(person);
     }
 

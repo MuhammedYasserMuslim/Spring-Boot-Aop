@@ -34,13 +34,13 @@ public class PersonController {
 
     @PostMapping("/persons")
     public Person save(@RequestBody Person person) {
-        personServices.save(person);
+        personServices.insert(person);
         return person;
     }
 
     @PutMapping("/persons")
     public Person update(@RequestBody Person person) {
-        personServices.save(person);
+        personServices.insert(person);
         return person;
     }
 
