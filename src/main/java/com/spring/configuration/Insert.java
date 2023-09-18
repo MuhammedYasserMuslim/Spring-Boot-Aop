@@ -1,5 +1,6 @@
 package com.spring.configuration;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -14,10 +15,12 @@ public class Insert {
 
 
 
-    @Before("execution( public * com.spring.services.DevolperServices.findAll())")
-    public void getTime(){
+    @Before("execution( public * findAll())")
+    public void getTime(JoinPoint joinPoint){
         Date date = new Date();
         System.out.println("Connected ..........!");
         System.out.println(System.currentTimeMillis());
+        System.out.println(joinPoint.getSignature().getName()); //get method name
+        System.out.println(joinPoint.getSignature().getDeclaringTypeName()); //get method declaring
     }
 }
